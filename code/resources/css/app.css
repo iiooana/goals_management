@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-navbar{
+        @apply py-2 px-4 hover:rounded-md  hover:bg-bluew-500/40;
+    }
+}
