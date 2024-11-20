@@ -4,6 +4,6 @@
 
 @layer components {
     .btn-navbar{
-        @apply py-2 px-4 hover:shadow-inner hover:text-stone-900 hover:rounded-sm hover:bg-green-400;
+        @apply py-2 px-4 hover:shadow-inner hover:text-stone-900 hover:rounded-lg hover:bg-green-400 ;
     }
 }
