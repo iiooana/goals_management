@@ -1,4 +1,4 @@
-<div class="div-template rounded-lg border">
+<div class="div-template rounded-lg border border-slate-400 dark:border-transparent">
     <form wire:submit="save">
         <div class="grid grid-cols-2 gap-3">
             <x-input-text name="title" label="title" required="true" wire:model="form.title" />
