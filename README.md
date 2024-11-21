@@ -6,9 +6,9 @@
 
 
 
-#FRONTEND
-#Build with Tailwind css and Livewire.
-#Fontawesome with npm.
+FRONTEND
+Build with Tailwind css and Livewire.
+Fontawesome with npm.
 
-#BACKEND
-#Container manage by Docker, Postgres as DB, Laravel.
+BACKEND
+Container manage by Docker, Postgres as DB, Laravel.
