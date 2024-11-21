@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Forms;
 
-use Illuminate\Validation\Rules;
+
 use Livewire\Form;
 use App\Models\Goal;
 
@@ -16,12 +16,12 @@ class GoalForm extends Form
     public function rules(){
         //todo check deadline
         return [
-            "title" => ['require'],
+            "title" => ['required'],
         ];  
     }
     
     public function add(){
         $this->validate();
-        dd($this);
+        Goal::create($this->pull());
     }
 }

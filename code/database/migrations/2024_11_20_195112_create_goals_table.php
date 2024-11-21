@@ -18,6 +18,7 @@ return new class extends Migration
             $table->datetime('completed_at')->nullable();
             $table->datetime('deadline')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

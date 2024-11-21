@@ -6,4 +6,16 @@
     .btn-navbar{
         @apply py-2 px-4 hover:shadow-inner hover:text-stone-900 hover:rounded-lg hover:bg-green-400 ;
     }
+    .btn-primary{
+        @apply bg-green-400 py-1 px-3 min-w-24 rounded-lg font-bold dark:text-black;
+    }
+    .form-label{
+        @apply capitalize mr-2 text-nowrap font-medium text-lg;
+    }
+    .form-error{
+        @apply text-red-500 font-semibold capitalize mt-1 col-start-2;
+    }
+    .div-template{
+        @apply p-4 dark:text-slate-50;
+    }
 }
