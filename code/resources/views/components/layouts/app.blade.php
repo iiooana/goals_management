@@ -25,7 +25,7 @@
         </div>
         <div class="basis-3/4">
             <a href="/" class="btn-navbar basic-2/4">Dashboard</a>
-            <a href="{{ route('new_goal') }}" class="btn-navbar basic-2/4">Add new task</a>
+            <a href="/goal" class="btn-navbar basic-2/4">Add new task</a>
         </div>
         <div class="basis-1/2 text-right">
             <button class="py-2 px-2 min-w-10 basic-2/4 " onclick="toogleTheme()">
@@ -34,7 +34,7 @@
         </div>
     </nav>
     <div class="container-md mx-auto py-4 px-5">
-        <h1 class="text-center font-black uppercase text-4xl dark:text-slate-50 mb-3 ">{{ $title ?? '' }}</h1>
+        <h1 class="text-center font-black uppercase text-4xl dark:text-slate-50 mb-2 ">{{ $title ?? '' }}</h1>
             {{ $slot }}
     </div>
 </body>

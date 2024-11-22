@@ -11,17 +11,30 @@ class GoalForm extends Form
     public $title;
     public $description;
     public $deadline;
-    #public $goal Goal;
+    public ?Goal $goal;
 
     public function rules(){
-        //todo check deadline
         return [
             "title" => ['required'],
         ];  
     }
+
+    public function set(Goal $goal){
+        $this->goal = $goal;
+        $this->title = $goal->title;
+        $this->description = $goal->description;
+        $this->deadline = $goal->deadline;
+    }
     
-    public function add(){
+    public function save(){
         $this->validate();
-        Goal::create($this->pull());
+        if(!empty($this->goal) && !empty($this->goal->id)){
+            $this->goal->title = $this->title;
+            $this->goal->description = $this->description;
+            $this->goal->deadline = $this->deadline;
+            $this->goal->save();
+        }else{
+            Goal::create($this->pull());
+        }
     }
 }
