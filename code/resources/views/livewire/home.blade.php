@@ -7,22 +7,13 @@
     <div class="flex flex-row justify-center my-2">
         @php
         $percent = round(($success*100)/$tot,2);
-        $percent_int = intval($percent);
-        $class ="dark:to-green-600";
-        $i = 0;
-        if($percent_int == 100){ 
-            $class ="to-green-700 dark:to-green-950/50";
-            $i = 100;
-        }else{
-            $class = "to-transparent";
-            if($percent_int % 5 == 0){
-                $i = intval($percent_int);
-            }else{
-                $i = intval($percent_int/5)*5;
-            }
+        $to_color = "transparent";
+        if($percent == 100){ ;
+         $to_color = "rgb(22,163,74)";
         }
         @endphp
-       <div class="w-6/12 rounded-2xl bg-gradient-to-r from-0% to-{{$i}}% border-slate-400 from-green-400/90 dark:from-green-600/90 {{$class}} border py-0.5 px-1 text-center inline">
+       <div class="w-6/12 rounded-2xl bg-gradient-to-r border border-slate-700 dark:border-slate-400 to-green-950/50 py-0.5 px-1 text-center inline"
+       style="background: linear-gradient(to right, rgb(22,163,74,0.9) 0% , {{$to_color}} {{intval($percent)}}%)">
             <span>{{$percent}}%</span>
         </div>
     </div> 

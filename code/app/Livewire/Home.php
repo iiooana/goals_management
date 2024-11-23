@@ -16,9 +16,9 @@ class Home extends Component
 
     public function mount(){
         $this->goals = Goal::whereNull("completed_at")->orderBy('deadline','asc')->orderBy('title','asc')->orderBy('id','asc')->get();
-        $this->goals = $this->goals->merge(Goal::whereNotNull("completed_at")->orderBy('deadline','asc')->orderBy('title','asc')->orderBy('id','asc')->get());
+        $this->goals = $this->goals->merge(Goal::whereNotNull("completed_at")->orderBy('created_at','desc')->orderBy('title','asc')->orderBy('id','asc')->get());
         $this->count_todo =  Goal::whereNull("completed_at")->count();
-        
+
         $this->tot =  Goal::count();
         $this->success =  Goal::whereNotNull("completed_at")->count();
     }
