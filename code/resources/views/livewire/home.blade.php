@@ -24,17 +24,17 @@
                 <span>{{session('success')}}</span>
             </div>
         @endif
-    <div class="grid grid-cols-3 gap-3">
+    <div class="grid lg:grid-cols-3 xl:grid-cols-4 gap-3">
         @foreach($goals as $item)
         @php
-            $class = "from-bluew-400/90 to-bluew-700 dark:from-bluew-600/30 dark:to-bluew-950/40";
+            $class = "from-bluew-400/90 to-bluew-700 dark:f6om-bluew-600/30 dark:to-bluew-950/40";
             if(!empty($item->completed_at)){
             $class = "from-green-400/90 to-green-700 dark:from-green-600/90 dark:to-green-950/40 ";
             }else if(!empty($item->deadline) ){
                 $timestap = strtotime($item->deadline);
                 if( $timestap < time()){
                     $class="from-red-400/90 to-red-700 dark:from-red-600/100 dark:to-red-950/40" ;
-                }else if($timestap <= strtotime("+2 day") ){
+                }else if($timestap <= strtotime("+1 day") ){
                     $class = "from-yellow-400/90 to-yellow-700 dark:from-yellow-600/80 dark:to-yellow-950/40";
                 }
                 else if($timestap <= strtotime("+7 day") ){
