@@ -2,7 +2,7 @@
     <form wire:submit="save">
         <div class="grid grid-cols-2 gap-3">
             <x-input-text name="form.title" label="title" required="true" wire:model="form.title" />
-            <x-input-datetime name="form.deadline" label="deadline" min="{{ $is_new === true? date('Y-m-d').'T'.date('H:i') : ''}}" wire:model="form.deadline" />        
+            <x-input-datetime name="form.deadline" label="deadline" min="{{ $is_new === true? date('Y-m-d').'T'.date('H:i') : ''}}" wire:model="form.deadline" />      
             <x-input-textarea name="form.description" label="description" wire:model="form.description" />
         </div>
         <div wire:loading.delay>

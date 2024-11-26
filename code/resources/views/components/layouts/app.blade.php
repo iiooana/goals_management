@@ -17,7 +17,7 @@
 </head>
 
 <body class="bg-bluew-100 dark:bg-slate-950">
-    <nav class="bg-bluew-300/30 dark:bg-bluew-900/10 px-2 text-gray-800 dark:text-slate-100 min-h-16 text-xl font-bold shadow-md flex flex-row items-center uppercase tracking-tight">
+    <nav class="bg-bluew-300/30 dark:bg-bluew-900/10 px-2 text-gray-800 dark:text-slate-100 min-h-16 text-md font-bold shadow-md flex flex-row items-center uppercase tracking-tight">
         <div class="basis-1/4">
             <a href="/" class="basic-6">
                 <img class="max-h-14" src="/img/icons8-goals-lineal-color-96.png">

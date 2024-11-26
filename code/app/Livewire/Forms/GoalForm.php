@@ -31,7 +31,7 @@ class GoalForm extends Form
         if(!empty($this->goal) && !empty($this->goal->id)){
             $this->goal->title = $this->title;
             $this->goal->description = $this->description;
-            $this->goal->deadline = $this->deadline;
+            $this->goal->deadline = empty($this->deadline) ? null : $this->deadline;
             $this->goal->save();
         }else{
             Goal::create($this->pull());

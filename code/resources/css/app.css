@@ -7,7 +7,7 @@
         @apply py-2 px-4 hover:shadow-inner hover:text-stone-900 hover:rounded-lg hover:bg-green-400 ;
     }
     .btn-primary{
-        @apply bg-green-400 py-1 px-3 min-w-24 rounded-lg font-bold dark:text-black;
+        @apply bg-green-400 py-1 px-3 min-w-24 rounded-lg font-bold dark:text-black hover:bg-green-600;
     }
     .form-label{
         @apply capitalize mr-2 text-nowrap font-medium text-lg;

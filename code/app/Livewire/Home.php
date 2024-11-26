@@ -30,6 +30,10 @@ class Home extends Component
         Goal::where('id',$id)->update(['completed_at'=> date('Y-m-d H:i:s')]);
         $this->mount();
     }
+    public function uncomplete($id){
+        Goal::where('id',$id)->update(['completed_at'=> null]);
+        $this->mount();
+    }
     public function delete($id){
         Goal::where('id',$id)->delete();
         $this->mount();
