@@ -83,13 +83,11 @@
                         <button class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold" wire:click="delete({{$item->id}})" 
                         wire:confirm="Are you sure to delete {{ stripcslashes($item->title)}} ?"><i class="fa fa-trash"></i> Delete</button>
                         @if(empty($item->completed_at))
-                        <button class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold" wire:click="clone({{$item->id}})"><i class="fa fa-clone"></i> Clone</button>
+                        <button class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold" wire:click="clone({{$item->id}})"><i class="fa fa-check"></i> Clone</button>
                         <button class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold" wire:click="complete({{$item->id}})"><i class="fa fa-check"></i> Complete</button>
                         @else
                         <button class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold" wire:click="uncomplete({{$item->id}})"><i class="fa fa-list"></i> Uncomplete</button>
                         @endif
-
-                        <a href="/goal/{{$item->id}}" class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold"><i class="fa fa-pencil"></i> Edit</a>
                     </div>
                 </div>
             </div>

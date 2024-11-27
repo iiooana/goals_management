@@ -35,7 +35,11 @@ class GoalForm extends Form
             $this->goal->deadline = empty($this->deadline) ? null : $this->deadline;
             $this->goal->save();
         }else{
-            Goal::create($this->pull());
+            $tmp = new Goal();
+            $tmp->title = $this->pull('title');
+            $tmp->description = $this->pull('description');
+            $tmp->deadline = empty($this->deadline) ? null : $this->pull('deadline');
+            $tmp->save();
         }
     }
 }
