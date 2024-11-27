@@ -38,4 +38,13 @@ class Home extends Component
         Goal::where('id',$id)->delete();
         $this->mount();
     }
+    public function clone($id){
+        $goal = Goal::findOrFail($id);
+        $new_goal = new Goal();
+        $new_goal->title = $goal->title;
+        $new_goal->deadline = $goal->deadline;
+        $new_goal->description = $goal->description;
+        $new_goal->save();
+        return redirect('/goal/'.$new_goal->id);
+    }
 }

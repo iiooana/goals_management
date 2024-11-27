@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use Livewire\Attributes\Title;
 use App\Livewire\Forms\GoalForm;
 use App\Models\Goal;
 
@@ -14,6 +13,7 @@ class GoalLivewire extends Component
 
     public function mount(int $id = null){
         $this->is_new =true;
+        $this->form->deadline = date('Y-m-d H:i',strtotime('+6 hours'));
         
         if(!empty($id)){
             $goal =  Goal::findOrFail($id);

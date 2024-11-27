@@ -13,6 +13,7 @@ class GoalForm extends Form
     public $deadline;
     public ?Goal $goal;
 
+
     public function rules(){
         return [
             "title" => ['required'],
