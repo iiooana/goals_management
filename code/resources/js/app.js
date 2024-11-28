@@ -16,8 +16,8 @@ function updateTheme(){
     switch(localStorage.getItem('theme-color'))  {
         case "light":
             html.classList.remove("dark");
-            icon.classList.remove("fa-sun-o");
             icon.classList.add("fa-moon-o");    
+            icon.classList.remove("fa-sun-o");
             break;
         default:
             html.classList.add("dark");

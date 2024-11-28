@@ -29,7 +29,7 @@ class GoalLivewire extends Component
 
     public function save(){
         $this->form->save();
-       // session()->flash('success','Goal added!'); 
-       return redirect("/")->with('success',$this->is_new === true  ? 'Goal added.': 'Goal saved.');
+        session()->flash('success','Task '.($this->is_new === true  ? 'added.': 'saved.')); 
+       return $this->redirect("/",navigate:true);
     }
 }

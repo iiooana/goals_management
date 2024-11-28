@@ -7,7 +7,7 @@ use Livewire\Volt\Volt;
 
 
 Route::get("/",Home::class);
-Route::get("/goal/{id?}",GoalLivewire::class);
+Route::get("/task/{id?}",GoalLivewire::class);
 /**
  * TESTS REGION
  */

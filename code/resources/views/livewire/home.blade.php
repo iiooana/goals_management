@@ -85,7 +85,7 @@
                         @else
                         <button class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold" wire:click="uncomplete({{$item->id}})"><i class="fa fa-list"></i> Uncomplete</button>
                         @endif
-                        <a href="/goal/{{$item->id}}" class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold"><i class="fa fa-pencil"></i> Edit</a>
+                        <a href="/task/{{$item->id}}" wire:navigate class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold"><i class="fa fa-pencil"></i> Edit</a>
                     </div>
                 </div>
             </div>
