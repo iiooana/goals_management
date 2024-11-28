@@ -18,12 +18,9 @@
         </div>
     </div> 
     <!-- endregion progress bar-->    
-      @if(!empty(session('success')))
-        <div class="flex justify-center bg-green-500 my-3 py-2 px-1 text-center font-semibold leading-6 text-sm shadow-inner rounded-lg dark:text-slate-950 
-        transition-opacity-0 duration-150">
-                <span>{{session('success')}}</span>
-            </div>
-        @endif
+    @if(!empty(session('success')))
+        <x-alert extra_classes="bg-green-500">{{session('success')}}</x-alert>
+    @endif
     <div class="grid lg:grid-cols-3 xl:grid-cols-4 gap-3">
         @foreach($goals as $item)
         @php
@@ -88,6 +85,7 @@
                         @else
                         <button class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold" wire:click="uncomplete({{$item->id}})"><i class="fa fa-list"></i> Uncomplete</button>
                         @endif
+                        <a href="/goal/{{$item->id}}" class="border border-black dark:border-white rounded-lg p-1 hover:font-extrabold"><i class="fa fa-pencil"></i> Edit</a>
                     </div>
                 </div>
             </div>
