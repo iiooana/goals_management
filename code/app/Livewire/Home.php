@@ -54,6 +54,6 @@ class Home extends Component
         $new_goal->deadline = $goal->deadline;
         $new_goal->description = $goal->description;
         $new_goal->save();
-        return redirect('/goal/'.$new_goal->id);
+        return redirect('/task/'.$new_goal->id);
     }
 }

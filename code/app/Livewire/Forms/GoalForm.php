@@ -14,7 +14,7 @@ class GoalForm extends Form
     public ?Goal $goal;
 
 
-    public function rules(){
+    protected function rules(){
         return [
             "title" => ['required'],
         ];  
@@ -28,7 +28,8 @@ class GoalForm extends Form
     }
     
     public function save(){
-        $this->validate();
+        //todo check $validated;
+       $validate = $this->validate();
         if(!empty($this->goal) && !empty($this->goal->id)){
             $this->goal->title = $this->title;
             $this->goal->description = $this->description;

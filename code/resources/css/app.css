@@ -16,6 +16,6 @@
         @apply text-red-500 font-semibold capitalize mt-1 col-start-2;
     }
     .div-template{
-        @apply p-4 dark:text-slate-50;
+        @apply p-3 dark:text-slate-50;
     }
 }

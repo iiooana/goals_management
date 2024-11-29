@@ -42,7 +42,7 @@
             <div wire:key="{{$item->id}}" class="bg-gradient-to-r {{$class}} rounded-lg p-2 flex flex-col justify-between">
                 <div class="flex flex-row justify-between items-center">
                     <div>
-                        <p class="text-2xl uppercase">{{$item->title}}</p>
+                        <p class="text-xl uppercase">{{$item->title}}</p>
                         @if(!empty($item->deadline))
                             <p><i class="fa fa-calendar-check-o"></i> Deadline: {{ date('H:i d/m/Y',strtotime($item->deadline))}}</p>
                         @endif

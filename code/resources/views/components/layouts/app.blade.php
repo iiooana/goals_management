@@ -18,8 +18,8 @@
 
 <body class="bg-bluew-100 dark:bg-slate-950">
     <x-nav/>
-    <div class="container-md mx-auto py-4 px-5">
-        <h1 class="text-center font-black uppercase text-4xl dark:text-slate-50 mb-2 ">{{ $title ?? '' }}</h1>
+    <div class="container-md mx-auto py-3 px-4">
+        <h1 class="text-center font-black uppercase text-3xl dark:text-slate-50 ">{{ $title ?? '' }}</h1>
         {{ $slot }}
     </div>
 </body>
