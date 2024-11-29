@@ -2,13 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Home;
-use App\Livewire\GoalLivewire;
+use App\Livewire\Goal\GoalLivewire;
+use App\Livewire\Goal\ShowGoals;
+
 use App\Livewire\UploadPhoto;
 use Livewire\Volt\Volt;
 
 
 Route::get("/",Home::class);
 Route::get("/task/{id?}",GoalLivewire::class);
+Route::get("/tasks",ShowGoals::class);
 
 /**
  * TESTS REGION

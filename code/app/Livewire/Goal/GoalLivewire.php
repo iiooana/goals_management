@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Goal;
 
 use Livewire\Component;
 use App\Livewire\Forms\GoalForm;
@@ -24,7 +24,7 @@ class GoalLivewire extends Component
 
     public function render()
     {
-        return view('livewire.goal')->title($this->is_new == true ? 'Add Task' : 'Edit Task');
+        return view('livewire.goal.add-edit')->title($this->is_new == true ? 'Add Task' : 'Edit Task');
     }
 
     public function save(){
