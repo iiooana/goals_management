@@ -7,7 +7,9 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - ./code:/var/www/html  
     networks:
-      - goals_php_web  
+      - goals_php_web
+    depends_on:
+      - frontend    
 
   frontend:
     build:
@@ -31,7 +33,6 @@ services:
     volumes:
       - ./code:/var/www/html  
     depends_on:
-      - nginx
       - db_postgres  
 
   db_postgres:
