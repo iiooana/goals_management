@@ -21,20 +21,21 @@ class SubjectEdit extends Component
 
     public function render()
     {
-        return view('livewire.subject.edit')->title(empty($this->subject->id) ? 'Add subject':'Edit sub');
+        return view('livewire.subject.edit')->title((empty($this->subject->id) ? 'Add':'Edit').' subject');
     }
-
     
     public function save() {
-        $message = 'Subject added!';
         $this->validate();
+        $name = $this->pull('name');
+        $message = $name.' added!';
         if(empty($this->subject->id)){
-            Subject::create(['name'=>$this->name]);
+            Subject::create(['name'=>$name]);
         }else{
-            $this->subject->name = $this->name;
+            $this->subject->name = $name;
             $this->subject->save();
-            $message = 'Subject edited!';
+            $message = $name.' edited!';
         }
+        $this->dispatch('subject-edit');
         return back()->with('success', $message);
     }
 }

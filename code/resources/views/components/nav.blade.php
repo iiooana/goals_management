@@ -8,7 +8,6 @@
         <a href="/" wire:navigate class="btn-navbar basic-2/4">Dashboard</a>
         <a href="/task" wire:navigate class="btn-navbar basic-2/4">Add task</a>
         <a href="/tasks" wire:navigate class="btn-navbar basic-2/4">Show tasks</a>
-        <a href="/subject" wire:navigate class="btn-navbar basic-2/4">Add subject</a>
         <a href="/subjects" wire:navigate class="btn-navbar basic-2/4">Show subjects</a>
     </div>
     <div class="basis-1/2 text-right">

@@ -9,7 +9,11 @@
         </div>
         <div class="text-center mt-4">
             <button class="btn-primary">
-                Save
+                @if(empty($subject->id))
+                    Add new
+                @else
+                    Save
+                @endif
             </button>
         </div>
         @if(!empty(session('success')))
