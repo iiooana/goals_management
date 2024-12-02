@@ -6,7 +6,7 @@ layout('components.layouts.app');
 state(['count'=>0 ,'toggle' => false]);
 
 $increment = fn() => $this->count++;
-
+ 
 $toggleModal = function () {
     $this->toggle = !$this->toggle;
     Log::info('Toggle Modal Triggered', ['toggle' => $this->toggle]);
