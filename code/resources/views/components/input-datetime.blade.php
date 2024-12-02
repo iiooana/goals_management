@@ -6,7 +6,7 @@
         <button type="button" class="underline text-xs text-right w-full" x-on:click="$wire.set('{{$name}}','',false)">reset</button>
     </div>
     @error($name)
-        <p class="form-error">{{$message}}</p>
+        <p class="form-error normal-case">{{$message}}</p>
     @enderror 
 </div>
   

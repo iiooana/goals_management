@@ -14,12 +14,12 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('id_question');
+            $table->unsignedInteger('subject_id');
             $table->text('text');
             $table->timestamps();
             $table->softDeletes();
             
-            $table->foreign('id_question')->references('id')->on('subjects');
+            $table->foreign('subject_id')->references('id')->on('subjects');
         });
     }
 

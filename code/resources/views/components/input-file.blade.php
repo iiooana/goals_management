@@ -5,7 +5,7 @@
     
     <div wire:loading wire:target="{{$name}}">Uploading...</div>
     @error($name)
-        <p class="form-error">{{$message}}</p>
+        <p class="form-error normal-case">{{$message}}</p>
     @enderror
 </div>
   

@@ -6,6 +6,7 @@ use App\Livewire\Goal\GoalLivewire;
 use App\Livewire\Goal\ShowGoals;
 use App\Livewire\Subject\SubjectShow;
 use App\Livewire\Subject\SubjectEdit;
+use App\Livewire\Question\QuestionShow;
 
 use App\Livewire\UploadPhoto;
 use Livewire\Volt\Volt;
@@ -18,7 +19,8 @@ Route::get("/tasks",ShowGoals::class);
 
 Route::get("/subjects",SubjectShow::class);
 Route::get("/subject/{id?}",SubjectEdit::class);
-Route::get("/subject/{id}/add-question",SubjectEdit::class);
+
+Route::get("/subject/{subject_id}/questions/{question_id?}",QuestionShow::class);
 
 /**
  * TESTS REGION
