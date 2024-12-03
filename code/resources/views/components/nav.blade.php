@@ -9,6 +9,7 @@
         <a href="/task" wire:navigate class="btn-navbar basic-2/4">Add task</a>
         <a href="/tasks" wire:navigate class="btn-navbar basic-2/4">Show tasks</a>
         <a href="/subjects" wire:navigate class="btn-navbar basic-2/4">Show subjects</a>
+        <a href="/start-quiz" wire:navigate class="btn-navbar basic-2/4">Start Quiz</a>
     </div>
     <div class="basis-1/2 text-right">
         <button class="py-2 px-2 min-w-10 basic-2/4 " onclick="toogleTheme()">

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('quiz_id');
             $table->unsignedInteger('question_id');
-            $table->float('score');
+            $table->float('score')->nullable();
             $table->timestamps();
 
             $table->foreign('quiz_id')->on('quizzes')->references('id');
