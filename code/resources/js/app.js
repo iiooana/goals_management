@@ -34,7 +34,12 @@ function toogleTheme(){
     }
     updateTheme();
 }
+function selectSearch(element,route,id_select){
+    console.log("route "+route);
+    console.log(element)
+}
 /**
  *  end function region
  */
 window.toogleTheme = toogleTheme;
+window.selectSearch = selectSearch;

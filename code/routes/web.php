@@ -8,6 +8,7 @@ use App\Livewire\Subject\SubjectShow;
 use App\Livewire\Subject\SubjectEdit;
 use App\Livewire\Question\QuestionShow;
 use App\Livewire\Quiz\QuizCreate;
+use App\Models\Goal;
 
 use App\Livewire\UploadPhoto;
 use Livewire\Volt\Volt;
@@ -24,6 +25,15 @@ Route::get("/subject/{id?}",SubjectEdit::class);
 Route::get("/subject/{subject_id}/questions/{question_id?}",QuestionShow::class);
 
 Route::get('/start-quiz',QuizCreate::class);
+
+Route::get('/search/{q?}',function($q = null){
+    $tmp = Goal::select('id','title');
+    if(!empty($q)){
+        $tmp->where('title','ilike','%'.$q.'%');
+    }
+    $tmp->orderBy('deadline','desc');
+    return json_encode($tmp->get()->toArray());
+});
 
 /**
  * TESTS REGION

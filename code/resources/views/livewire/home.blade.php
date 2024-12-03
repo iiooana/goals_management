@@ -3,6 +3,10 @@
     <h2 class="text-center text-2xl capitalize my-1">It's a relax day!</h2>
     @else
     <h2 class="text-center text-2xl capitalize my-1">Task to do: {{ $count_todo }}</h2>
+    <div class="flex flex-row justify-center my-2">
+        <x-select-search>
+        </x-select-search>
+    </div>
     <!-- region progress bar -->
     <div class="flex flex-row justify-center my-2">
         @php
