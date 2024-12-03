@@ -30,7 +30,7 @@ class QuestionShow extends Component
     {
         $questions = null;
         if($this->subject->questions->count() > 0){
-            $questions = $this->subject->questions()->where('text','ilike','%'.$this->query.'%')->paginate(15);
+            $questions = $this->subject->questions()->where('text','ilike','%'.$this->query.'%')->orderBy('created_at','desc')->paginate(15);
         }
         return view('livewire.question.question-show',[
             "questions" => $questions,

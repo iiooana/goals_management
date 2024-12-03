@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\Subject;
 use Livewire\Attributes\Validate;
+use Livewire\Attributes\Computed;
 use App\Models\Question;
 use App\Models\QuizQuestion;
 use App\Models\Quiz;
@@ -27,6 +28,7 @@ class QuizCreate extends Component
         $this->score = QuizQuestion::where('quiz_id',Session::get('quiz_id'))->sum('score');
     }
 
+    #[Computed]
     public function mount(){
         if (!empty(Session::get('quiz_id'))){
             $this->step = 2;
@@ -35,7 +37,7 @@ class QuizCreate extends Component
                 foreach($tmp_questions as $item){
                     $this->questions[] = [
                         'text' => $item->question->text,
-                        'score' => !isset($item->score) ?  0:$item->score,
+                        'score' => !isset($item->score) ? 1: $item->score,
                         'id_row' => $item->id
                     ];
                 }
@@ -63,7 +65,9 @@ class QuizCreate extends Component
             $quiz->n_questions = $this->n_questions;
             $quiz->save();
             $this->step = 2;
-            //generate the first question
+            //$n_30percent = intval((30*$this->n_questions)/100);
+            //30% is the same wrong more
+            //70% random
             $tmp = Question::select('id','text')->where('subject_id',$this->subject_id)->inRandomOrder()->limit($this->n_questions)->get();
             if($tmp->count() > 0){   
                 foreach($tmp as $item){
@@ -71,12 +75,10 @@ class QuizCreate extends Component
                     $quiz_question->quiz_id = $quiz->id;
                     $quiz_question->question_id = $item->id;
                     $quiz_question->save();
-                    $this->questions[] = $quiz_question;
                     
                 }
                 Session::put('quiz_id',$quiz->id);
             }
-            $this->mount();
         }         
     }
 
@@ -91,7 +93,6 @@ class QuizCreate extends Component
 
     public function terminateQuiz(){
         Session::forget('quiz_id');
-        return back();
     }
   
 } 
