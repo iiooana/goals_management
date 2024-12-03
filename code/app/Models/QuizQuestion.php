@@ -9,11 +9,12 @@ use App\Models\Question;
 
 class QuizQuestion extends Model
 {
+    protected $fillable = ['score'];
     public function quiz() :HasOne {
         return $this->hasOne(Quiz::class);
     }
 
     public function question() : HasOne {
-        return $this->hasOne(Question::class);
+        return $this->hasOne(Question::class,'id','question_id');
     }
 }
