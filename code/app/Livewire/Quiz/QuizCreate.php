@@ -76,6 +76,7 @@ class QuizCreate extends Component
                 }
                 Session::put('quiz_id',$quiz->id);
             }
+            $this->mount();
         }         
     }
 
