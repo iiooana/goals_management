@@ -8,6 +8,7 @@ use App\Livewire\Subject\SubjectShow;
 use App\Livewire\Subject\SubjectEdit;
 use App\Livewire\Question\QuestionShow;
 use App\Livewire\Quiz\QuizCreate;
+use App\Livewire\CountDown;
 
 use App\Livewire\UploadPhoto;
 use Livewire\Volt\Volt;
@@ -35,4 +36,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get("/upload",UploadPhoto::class);
+Route::get('/count-down',CountDown::class);
 */
