@@ -1,5 +1,5 @@
 <div class="div-template dark:dark:border-slate-200">
-    <livewire:subject.edit />
+    <livewire:subject.SubjectEdit />
     <div class="mt-10">
         <x-input-search name="search" wire:model.live="query" />
     </div>
