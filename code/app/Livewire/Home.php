@@ -23,7 +23,7 @@ class Home extends Component
         $this->success =  Goal::whereNotNull("completed_at")->count();
     }
     public function mountDemo(){
-        $tmp = [15,26,12,30,66,16,13,111];
+        $tmp = [15,26,12,30,66,16,13,111,177,182,198];
         $this->goals = Goal::whereIn('id',$tmp)->whereNull("completed_at")->orderBy('deadline','asc')->orderBy('title','asc')->orderBy('id','asc')->get();
         $this->goals = $this->goals->merge(Goal::whereIn('id',$tmp)->whereNotNull("completed_at")->orderBy('created_at','desc')->orderBy('title','asc')->orderBy('id','asc')->get());
         $this->count_todo =  Goal::whereIn('id',$tmp)->whereNull("completed_at")->count();

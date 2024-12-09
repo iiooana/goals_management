@@ -17,6 +17,15 @@ class ShowGoals extends Component
        $this->resetPAge();
     }
 
+    public function renderDemo(){
+        return view('livewire.goal.show-goals',[
+            'goals' => Goal::whereIn('id',[15,26,12,30,66,16,13,111,177,182,198])
+            ->where(function($query){
+                $query->orWhere('title','ilike','%'.$this->query.'%');
+                $query->orWhere('description','ilike','%'.$this->query.'%');
+            })->orderBy('title','asc')->paginate(15)
+        ]); 
+    }
     
     public function render()
     {
