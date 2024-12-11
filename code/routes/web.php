@@ -31,10 +31,11 @@ Route::get('/start-quiz',QuizCreate::class);
  */
 
 /*
-Volt::route('/counter','counter');
+
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get("/upload",UploadPhoto::class);
 Route::get('/count-down',CountDown::class);
+Volt::route('/counter','counter');
 */
